@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+
+//Template Name: Pagina full-width
+
+get_header(); ?>
 
 <main id="page" class="page">
     <?php if (have_posts()):
@@ -6,12 +10,11 @@
             the_post(); ?>
 
     <section id="terms-1" class="wide-60 terms-section division">
-        <div class="container">
             <div class="row">
 
 
                 <!-- TERMS CONTENT -->
-                <div class="col-lg-10 offset-lg-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <div class="col-lg-12" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                     <div class="entry-content" itemprop="mainContentOfPage">
                        
@@ -23,7 +26,6 @@
 
                 </div>
             </div>
-        </div>
     </section>
 </main>
 <?php get_footer(); ?>

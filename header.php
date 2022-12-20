@@ -212,7 +212,7 @@
         <?php else:?>
                 <!-- PAGE HERO
 			============================================= -->	
-			<div class="page-hero-section division">
+			<div id="terms-page" class="page-hero-section division">
 				<div class="container">	
 					<div class="row">	
 						<div class="col-lg-10 offset-lg-1">
@@ -225,8 +225,8 @@
 											<div class="breadcrumb-nav">
 												<nav aria-label="breadcrumb">
 												  	<ol class="breadcrumb">
-												    	<li class="breadcrumb-item"><a href="demo-1.html">Home</a></li>
-												    	<li class="breadcrumb-item active" aria-current="page">Terms & Privacy</li>
+												    	<li class="breadcrumb-item"><a href="/">Home</a></li>
+												    	<li class="breadcrumb-item active" aria-current="page"><?php the_title(); ?></li>
 												  	</ol>
 												</nav>
 											</div>
@@ -235,7 +235,7 @@
 								</div>
 
 								<!-- Title -->
-								<h2 class="h2-xl">Terms & Privacy</h2>
+								<h2 class="h2-xl"><?php the_title(); ?></h2>
 
 							</div>
 						</div>	
