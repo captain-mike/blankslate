@@ -49,16 +49,17 @@
 
 		<!-- RESPONSIVE CSS -->
 		<link href="<?php echo get_template_directory_uri() ?>/css/responsive.css" rel="stylesheet">
-	
+        <?php wp_head() ?>
 	</head>
 
-    <body>
+    <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
 
 
 
 
 		<!-- PRELOADER SPINNER
-		============================================= 
+		============================================= -->
 		<div id="loader-wrapper">
 			<div id="loader">
 				<div class="cssload-spinner">
@@ -68,7 +69,7 @@
 					<div class="cssload-ball cssload-ball-4"></div>
 				</div>
 			</div>
-		</div>-->
+		</div>
 
 
 
@@ -76,6 +77,9 @@
 		<!-- HEADER-1
 		============================================= -->
 		<header id="header-1" class="header navik-header header-shadow center-menu-1 header-transparent">
+
+
+
 			<div class="container">
 
 
@@ -125,7 +129,7 @@
 									<li><a href="menu-3.html">Menu v.3 - Sections</a></li>
 	                            </ul>
 	                        </li>
-                            
+
 						</ul>
 						<ul>
 
@@ -170,3 +174,74 @@
 
 			</div>     <!-- End container -->
 		</header>	<!-- END HEADER-1 -->
+
+
+        <?php if(is_home() || is_front_page()):?> 
+        <!-- HERO-5
+			============================================= -->	
+			<section id="hero-5" class="hero-section">
+				<div class="bg-fixed bg-inner division">
+
+
+					<!-- HERO TEXT -->
+					<div class="container">							
+						<div class="row">
+							<div class="col-md-12">
+								<div class="hero-5-txt text-center white-color">
+
+									<!-- Title -->	
+									<h2>Pizza</h2>
+
+									<!-- Image -->
+									<div class="hero-5-img">
+										<img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/images/hero-5-img.png" alt="hero-image">
+									</div>
+
+								</div>  
+							</div>	 
+						</div>	 <!-- End row -->
+					</div>	 <!-- END HERO TEXT -->
+
+
+					<!-- SECTION OVERLAY -->	
+					<div class="bg-fixed white-overlay-wave"></div>
+
+
+				</div>	   <!-- End Inner Content -->
+			</section>	<!-- END HERO-5 -->	
+        <?php else:?>
+                <!-- PAGE HERO
+			============================================= -->	
+			<div class="page-hero-section division">
+				<div class="container">	
+					<div class="row">	
+						<div class="col-lg-10 offset-lg-1">
+							<div class="hero-txt text-center white-color">
+
+								<!-- Breadcrumb -->
+								<div id="breadcrumb">
+									<div class="row">						
+										<div class="col">
+											<div class="breadcrumb-nav">
+												<nav aria-label="breadcrumb">
+												  	<ol class="breadcrumb">
+												    	<li class="breadcrumb-item"><a href="demo-1.html">Home</a></li>
+												    	<li class="breadcrumb-item active" aria-current="page">Terms & Privacy</li>
+												  	</ol>
+												</nav>
+											</div>
+										</div>
+									</div> 
+								</div>
+
+								<!-- Title -->
+								<h2 class="h2-xl">Terms & Privacy</h2>
+
+							</div>
+						</div>	
+					</div>	  <!-- End row -->
+				</div>	   <!-- End container --> 
+			</div>	<!-- END PAGE HERO -->	
+
+            
+        <?php endif;?> 
