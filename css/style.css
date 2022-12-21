@@ -5456,6 +5456,16 @@ select:-webkit-autofill:focus {
   background-attachment: scroll!important;
   padding-top: 170px;
   padding-bottom: 120px;
+  position: relative;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #about-page {
@@ -5508,6 +5518,10 @@ select:-webkit-autofill:focus {
 
 #terms-page {
   background-image: url(../images/terms-page.jpg);
+}
+
+.error404 .page-hero-section{
+  background-image:url(http://pizza.test/wp-content/uploads/2022/12/empty-dirty-plate-top-view-2021-08-26-19-03-57-utc-e1671616114898.jpg);
 }
 
 /*------------------------------------------*/

@@ -88,12 +88,14 @@
 
 
 					<!-- CALL BUTTON -->
-				    <div class="callusbtn"><a href="tel:123456789"><i class="fas fa-phone"></i></a></div>
+				    <div class="callusbtn"><a href="tel:<?php the_field('telefono','option')?>"><i class="fas fa-phone"></i></a></div>
 
 					
 					<!-- LOGO IMAGE -->
-	                <div class="logo" data-mobile-logo="images/logo-02.png" data-sticky-logo="images/logo-02.png">
-	                	<a href="#hero-5"><img src="images/logo-02.png" alt="header-logo"/></a>
+	                <div class="logo" 
+					data-mobile-logo="<?php echo get_template_directory_uri() ?>/images/logo-02.png" 
+					data-sticky-logo="<?php echo get_template_directory_uri() ?>/images/logo-02.png">
+	                	<a href="#hero-5"><img src="<?php echo get_template_directory_uri() ?>/images/logo-02.png" alt="header-logo"/></a>
 					</div>
 
 					
@@ -107,68 +109,22 @@
 
 					<!-- MAIN MENU -->
 	                <nav class="navik-menu menu-caret navik-yellow">
-	                	<ul class="top-list">
 
-	                		<!-- DROPDOWN MENU -->
-	                		<li><a href="#">About</a>
-	                			<ul>
-	                            	<li><a href="about.html">About Testo</a></li>
-	                            	<li><a href="team.html">Meet The Team</a></li>
-									<li><a href="gallery.html">Images Gallery</a></li>
-									<li><a href="gift-cards.html">Gift Cards</a></li>
-									<li><a href="faqs.html">F.A.Q.s</a></li>
-									<li><a href="terms.html">Terms & Privacy</a></li>
-	                            </ul>
-	                		</li>
+						<?php wp_nav_menu(
+							[
+								'theme_location' => 'left-main-menu', 
+								'container' => ''
+							]
+						); ?>
 
-	                		<!-- DROPDOWN MENU -->
-	                    	<li><a href="#">Our Menu</a>
-	                        	<ul>
-	                            	<li><a href="menu-1.html">Menu v.1 - Tabs Cards</a></li>
-									<li><a href="menu-2.html">Menu v.2 - Cards</a></li>
-									<li><a href="menu-3.html">Menu v.3 - Sections</a></li>
-	                            </ul>
-	                        </li>
+						<?php wp_nav_menu(
+							[
+								'theme_location' => 'right-main-menu', 
+								'container' => ''
+							]
+						); ?>
 
-						</ul>
-						<ul>
-
-							<!-- DROPDOWN MENU -->
-	                		<li><a href="#">Shop</a>
-	                			<ul>
-	                            	<li><a href="product-single.html">Single Product</a></li>
-									<li><a href="cart.html">Shopping Cart</a></li>
-	                            </ul>
-	                		</li>
-
-							<!-- DROPDOWN MENU -->
-							<li><a href="#">Blog</a>
-								<ul>
-	                            	<li><a href="blog-listing.html">Blog Listing</a></li>
-									<li><a href="single-post.html">Single Post</a></li>
-	                            </ul>
-							</li>
-
-	                        <!-- DROPDOWN MENU -->
-							<li><a href="#">Contacts</a>
-								<ul>
-		                        	<li><a href="booking.html">Book A Table</a></li>
-		                        	<li><a href="locations.html">Our Locations</a></li>
-									<li><a href="contacts.html">Contact Us</a></li>
-								</ul>
-							</li>
-
-							<!-- BASKET ICON -->
-							<li class="basket-ico ico-30">
-					        	<a href="cart.html">
-					        		<span class="ico-holder"><span class="flaticon-shopping-bag"></span> <em class="roundpoint">2</em></span>
-					        	</a>
-					        </li>
-
-	                    </ul>
-	                </nav>	<!-- END MAIN MENU -->
-
-
+					</nav>
 				</div>	<!-- END NAVIGATION MENU -->
 
 
@@ -176,72 +132,12 @@
 		</header>	<!-- END HEADER-1 -->
 
 
-        <?php if(is_home() || is_front_page()):?> 
-        <!-- HERO-5
-			============================================= -->	
-			<section id="hero-5" class="hero-section">
-				<div class="bg-fixed bg-inner division">
+        <?php 
+		
+		//is_home() => se è home page del blog
+		//is_front_page() => se è home page statica
+		if(is_home() || is_front_page()):?> 
+        
+		<?php //qualcosa da mostrare solo in home page?>
 
-
-					<!-- HERO TEXT -->
-					<div class="container">							
-						<div class="row">
-							<div class="col-md-12">
-								<div class="hero-5-txt text-center white-color">
-
-									<!-- Title -->	
-									<h2>Pizza</h2>
-
-									<!-- Image -->
-									<div class="hero-5-img">
-										<img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/images/hero-5-img.png" alt="hero-image">
-									</div>
-
-								</div>  
-							</div>	 
-						</div>	 <!-- End row -->
-					</div>	 <!-- END HERO TEXT -->
-
-
-					<!-- SECTION OVERLAY -->	
-					<div class="bg-fixed white-overlay-wave"></div>
-
-
-				</div>	   <!-- End Inner Content -->
-			</section>	<!-- END HERO-5 -->	
-        <?php else:?>
-                <!-- PAGE HERO
-			============================================= -->	
-			<div id="terms-page" class="page-hero-section division">
-				<div class="container">	
-					<div class="row">	
-						<div class="col-lg-10 offset-lg-1">
-							<div class="hero-txt text-center white-color">
-
-								<!-- Breadcrumb -->
-								<div id="breadcrumb">
-									<div class="row">						
-										<div class="col">
-											<div class="breadcrumb-nav">
-												<nav aria-label="breadcrumb">
-												  	<ol class="breadcrumb">
-												    	<li class="breadcrumb-item"><a href="/">Home</a></li>
-												    	<li class="breadcrumb-item active" aria-current="page"><?php the_title(); ?></li>
-												  	</ol>
-												</nav>
-											</div>
-										</div>
-									</div> 
-								</div>
-
-								<!-- Title -->
-								<h2 class="h2-xl"><?php the_title(); ?></h2>
-
-							</div>
-						</div>	
-					</div>	  <!-- End row -->
-				</div>	   <!-- End container --> 
-			</div>	<!-- END PAGE HERO -->	
-
-            
         <?php endif;?> 

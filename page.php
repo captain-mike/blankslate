@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+get_header();
+get_template_part('parts/page-header');
+?>
 
 <main id="page" class="page">
     <?php if (have_posts()):
