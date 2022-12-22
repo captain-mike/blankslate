@@ -1,6 +1,11 @@
       <!-- PAGE HERO
 			============================================= -->	
-			<div id="terms-page" class="page-hero-section division">
+			<?php
+             $sfondo = get_field('immagine_header') ? get_field('immagine_header')['sizes']['2048x2048'] : '';
+			?>
+			<div style="background-image:url(<?=$sfondo?>)" class="page-hero-section division">
+			<div class="overlay"></div>
+			<div class="overlay"></div>
 				<div class="container">	
 					<div class="row">	
 						<div class="col-lg-10 offset-lg-1">
